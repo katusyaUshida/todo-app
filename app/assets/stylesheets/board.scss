@@ -1,7 +1,86 @@
 @import 'variables';
 
-.board_title{
+.board_label{
     font-size: 18px;
     font-weight: bold;
     color: black;
+}
+
+.board{
+    background-color: $primary-color;
+    background-color: $color-base;
+    margin: 16px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+    &_mark {
+        // float: right;
+        padding-top: 25px;
+        cursor: pointer;
+        width: auto;
+        height: 130px;
+        position: relative;
+        overflow: hidden;
+        
+        img{
+            position: absolute;
+            padding: 0 10px;
+            width: 100%;
+            border-radius: 13px;
+        }
+      }
+
+    &_title{
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 25px;
+        padding: 32px 0 10px 17px;
+        color: black;
+    }
+
+    &_detail {
+        display: flex;
+        font-size: 12px;
+        padding-top: 10px;
+        margin-left: $card-margin-l;
+        position: relative;
+
+        img{
+            cursor: pointer;
+            width: $avatar-size;
+            height: $avatar-size;
+            border-radius: 100%;
+            
+        }
+        
+        &_actions{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+        }
+      }
+
+    &_content{
+        font-size: 14px;
+        line-height: 19px;
+        margin-left: $card-margin-l;
+        opacity: 0.8;
+        //clear: both;
+        padding-left: 17px;
+        padding-top:15px;
+        padding-bottom: 29px;
+
+    }
+
+    h2{
+        font-size: 20px;
+        padding: 12px 17px;
+    }
+
+    &_talks{
+        padding: 12px 10px;
+    }
+
+    
 }

@@ -1,14 +1,7 @@
 .container
-  .board_title
+  .board_label
     %p Brackets
   .boards_list
-    .card
-      .card_mark
-        = image_tag 'IMG_7500.jpg'
-      .card_title
-        %p Title
-      .card_content
-        %p content
-      .card_detail
-        = image_tag 'IMG_7500.jpg'
+    - @tasks.each do |task|
+      = render ('board'), task: task
 

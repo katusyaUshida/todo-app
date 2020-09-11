@@ -1,0 +1,23 @@
+.board
+  .board_mark
+    = image_tag 'IMG_7500.jpg'
+  .board_title
+    = @task.title
+  .board_detail
+    = image_tag 'Oval.png'
+    %div
+      %p username
+      = @task.updated_at
+      .board_detail_actions
+        .dropdown
+          = image_tag 'Combined Shape.png', class: 'dropbtn'
+        -#   .dropdown-content.mini
+        -#     = link_to 'edit', edit_task_path(@task)
+        -#     = link_to 'delete', task_path(@task), deta:{method: 'delete'}
+  .board_content
+    = @task.content
+
+.board
+  %h2 Talk
+  .board_talks
+    %p comment
