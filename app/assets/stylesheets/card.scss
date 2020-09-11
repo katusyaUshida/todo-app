@@ -1,0 +1,69 @@
+@import 'variables';
+
+$card-margin-l: 10px;
+
+.boards_list{
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 36px;
+    padding: 8px 10px;
+}
+
+.card{
+    background-color: $color-base;
+    margin: 16px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &_title{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        padding: 32px 0 10px 17px;
+        color: black;
+        //float: left;
+
+    }
+
+    &_mark {
+        // float: right;
+        padding-top: 25px;
+        cursor: pointer;
+        width: auto;
+        height: 130px;
+        position: relative;
+        overflow: hidden;
+        
+        img{
+            position: absolute;
+            padding: 0 10px;
+            width: 100%;
+            border-radius: 13px;
+        }
+      }
+
+    &_content{
+        font-size: 14px;
+        line-height: 19px;
+        margin-left: $card-margin-l;
+        opacity: 0.8;
+        //clear: both;
+        padding-left: 17px;
+        padding-top:5px;
+        padding-bottom: 29px;
+
+    }
+
+    &_detail {
+        cursor: pointer;
+        padding: 0 0 20px 20px;
+
+        img{
+            width: $avatar-size;
+            height: $avatar-size;
+            border-radius: 100%;
+            vertical-align: middle;
+        }
+        
+      }
+}
