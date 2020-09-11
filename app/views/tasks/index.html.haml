@@ -1,0 +1,7 @@
+.container
+  .board_label
+    %p Brackets
+  .boards_list
+    - @tasks.each do |task|
+      = render ('board'), task: task
+
