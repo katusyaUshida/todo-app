@@ -3,6 +3,9 @@
 @import 'common';
 @import 'card';
 @import 'board';
+@import 'form';
+@import 'buttons';
+@import 'flash';
 
 html {
     word-spacing: 1px;
@@ -22,6 +25,7 @@ html {
 }
 
 body {
+    font-family: $text-base-font-family;
     height: 100%;
     background-color: rgb(241, 245, 247);
     font-size: 1em;
@@ -37,4 +41,34 @@ body {
   .container {
     padding: 16px 16px;
     width: 100%;
+  }
+
+  .float_btn {
+     position: relative;
+    // width: 355px;
+    height: 160px;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 87%;
+    margin:0 auto;
+    vertical-align: middle;
+    
+
+
+    .float_btn_title {
+        position: absolute;
+        top: 40%;
+        font-family: Avenir;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #000000;
+        border-bottom: 0;
+        width:  100%;
+        
+        
+      }
   }

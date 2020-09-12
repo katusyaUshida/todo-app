@@ -5,6 +5,7 @@ $header-padding-y: 10px;
 $avatar-size: 30px; 
 
 .header{
+    font-family: $text-base-font-family;
     display: flex;
     justify-content: space-between;
     background-color: $primary-color;
