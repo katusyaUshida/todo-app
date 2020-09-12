@@ -4,4 +4,9 @@
   .boards_list
     - @tasks.each do |task|
       = render ('board'), task: task
+    = link_to new_task_path do
+      .float_btn
+        .float_btn_title
+          + All new Board     
+            
 
