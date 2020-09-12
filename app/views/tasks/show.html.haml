@@ -11,9 +11,9 @@
       .board_detail_actions
         .dropdown
           = image_tag 'Combined Shape.png', class: 'dropbtn'
-        -#   .dropdown-content.mini
-        -#     = link_to 'edit', edit_task_path(@task)
-        -#     = link_to 'delete', task_path(@task), deta:{method: 'delete'}
+          .dropdown-content.mini
+            = link_to 'edit', edit_task_path(@task)
+            = link_to 'delete', task_path(@task), deta:{method: 'delete'}
   .board_content
     = @task.content
 
