@@ -3,10 +3,10 @@
     %p Brackets
   .boards_list
     - @tasks.each do |task|
-      = render ('board'), task: task
-    = link_to new_task_path do
+      = render ('common/board'), task: task
+    = link_to new_board_task_path(@tasks) do
       .float_btn
         .float_btn_title
-          + All new Board     
+          + All new Card     
             
 
