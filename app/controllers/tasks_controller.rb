@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
 
   def index
-    @tasks = Task.all
+    boards = Board.find(params[:board_id])
+    @tasks = boards.tasks.all
   end
 
   def show
@@ -11,7 +12,9 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    board = Board.find(params[:board_id])
+    @task = board.tasks.build
+    
   end
 
   def create

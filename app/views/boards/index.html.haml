@@ -1,0 +1,20 @@
+.container
+  .board_label
+    %p All Boards
+  .boards_list
+    - @boards.each do |board|
+      = link_to board_tasks_path(board) do
+        .card
+          .card_mark
+            = image_tag 'IMG_7500.jpg'
+          .card_title
+            = board.title
+          .card_content
+            = board.content
+          .card_detail
+            = image_tag 'IMG_7500.jpg'
+    = link_to new_board_path do
+      .float_btn
+        .float_btn_title
+          + All new Board     
+            
