@@ -31,6 +31,14 @@ $avatar-size: 30px;
         border-radius: 100%;
         vertical-align: middle;
     }
+
+    &_loginBtn{
+        height: $avatar-size;
+        background-color: $color-base;
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 5px 0;
+    }
     
 }
 
