@@ -1,20 +1,65 @@
-@import 'variables';
-@import 'header';
-@import 'common';
 @import 'card';
-@import 'board';
-@import 'form';
 @import 'buttons';
+@import 'variables';
+@import 'forms';
 @import 'flash';
+@import 'common';
+@import 'header';
+
+
+
+
+// header {
+
+//   .clear::after {
+//     content: "";
+//     clear: both;
+//     display: block;
+//   }
+
+//   p {
+//     font-family: Avenir;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 18px;
+//     line-height: 25px;
+
+//     float: left;
+//     width: 56px;
+//     height: 25px;
+//     left: 30px;
+//     top: 17px;
+//   }
+
+//   .header-right {
+//     float: right;
+//     width: 40px;
+//     height: 40px;
+//     left: 352px;
+//     top: 10px;
+//   }
+
+//   .line {
+//     position: absolute;
+//     width: 1920px;
+//     height: 1px;
+//     left: 0px;
+//     top: 58px;
+
+//     background: #000000;
+//     mix-blend-mode: normal;
+//     opacity: 0.1;
+//   }
+// }
 
 html {
-    word-spacing: 1px;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
-    height: 100%;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 *,
@@ -25,50 +70,148 @@ html {
 }
 
 body {
-    font-family: $text-base-font-family;
-    height: 100%;
-    background-color: rgb(241, 245, 247);
-    font-size: 1em;
-    color: #616161;
-    background-color: $primary-color;
+  height: 100%;
+  background-color: $base-bg-color;
+  font-size: 1em;
+  color: $text-base-color;
+}
+
+a{
+  text-decoration: none;
+  color: $text-base-color;
+}
+
+.container {
+  padding: 16px 16px;
+  width: 100%;
+  h1 {
+    height: 36px;
+    top: calc(50% - 36px/2);
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 36px;
+
+    color: #000000;
   }
 
-  a{
-    text-decoration: none;
-    color: $text-base-color;
-  }
-  
-  .container {
-    padding: 16px 16px;
-    width: 100%;
-  }
+  // .card {
+  //   width: 368px;
+  //   height: 261px;
+  //   left: 30px;
+  //   top: 161px;
 
-  .float_btn {
-     position: relative;
-    // width: 355px;
-    height: 160px;
-    background: #FFFFFF;
-    border: 1px dashed rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    cursor: pointer;
-    width: 87%;
-    margin:0 auto;
-    vertical-align: middle;
-    
+  //   background: #F4F4F4;
+  //   border-radius: 10px;
+
+  //   .card_title {
+  //     height: 25px;
+  //     left: 0%;
+  //     right: 76.79%;
+  //     top: calc(50% - 25px/2 - 12.5px);
+
+  //     font-family: Avenir;
+  //     font-style: normal;
+  //     font-weight: normal;
+  //     font-size: 18px;
+  //     line-height: 25px;
+  //     margin-top: 8px;
+  //     margin-bottom: 16px;
+
+  //     color: #000000;
+  //   }
+
+  //   .card_content {
+  //     height: 19px;
+  //     left: 0%;
+  //     right: 0%;
+  //     top: calc(50% - 19px/2 + 15.5px);
+
+  //     font-family: Avenir;
+  //     font-style: normal;
+  //     font-weight: normal;
+  //     font-size: 14px;
+  //     line-height: 19px;
+
+  //     color: #000000;
+
+  //     mix-blend-mode: normal;
+  //     opacity: 0.4;
+  //   }
+
+  //   .card_detail {
+  //     display: inline-block;
+  //     float: right;
+  //   }
+  // }
+
+  // .add_new_bord {
+  //  display: flex;
+  //   width: 362px;
+  //   height: 160px;
+  //   left: 30px;
+  //   top: 348px;
+
+  //   background: #FFFFFF;
+  //   border: 1px dashed rgba(0, 0, 0, 0.2);
+  //   border-radius: 10px;
+
+  //   p {
+  //     display: flex;
+  //     height: 25px;
+  //     left: 0.35%;
+  //     right: 0.35%;
+  //     top: calc(50% - 25px/2);
+
+  //     font-family: Avenir;
+  //     font-style: normal;
+  //     font-weight: normal;
+  //     font-size: 18px;
+  //     line-height: 25px;
+  //     /* identical to box height */
+
+  //     text-align: center;
+
+  //     color: #000000;
+      
+
+  //   }
+
+  //   a {
+  //     text-decoration: none;
+     
+      
+  //   }
+  // }
+}
+
+.float_btn {
+  position: relative;
+ // width: 355px;
+ height: 160px;
+ background: #FFFFFF;
+ border: 1px dashed rgba(0, 0, 0, 0.2);
+ border-radius: 10px;
+ cursor: pointer;
+ width: 87%;
+ margin:0 auto;
+ vertical-align: middle;
+ 
 
 
-    .float_btn_title {
-        position: absolute;
-        top: 40%;
-        font-family: Avenir;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 25px;
-        text-align: center;
-        color: #000000;
-        border-bottom: 0;
-        width:  100%;
-        
-        
-      }
-  }
+ .float_btn_title {
+     position: absolute;
+     top: 40%;
+     font-family: Avenir;
+     font-weight: normal;
+     font-size: 18px;
+     line-height: 25px;
+     text-align: center;
+     color: #000000;
+     border-bottom: 0;
+     width:  100%;
+     
+     
+   }
+}

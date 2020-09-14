@@ -4,9 +4,31 @@ $card-margin-l: 10px;
 
 .boards_list{
     font-weight: 800;
-    font-size: 26px;
-    line-height: 36px;
+    // font-size: 26px;
+    // line-height: 36px;
     padding: 8px 10px;
+
+    h2{
+        color: black;
+        margin-left: $card-margin-l;
+    }
+
+    .board_title-content{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        vertical-align: middle;
+    }
+}
+
+.task_eyecatch{
+    text-align: center;
+    margin: 10px 0 ;
+
+    img{
+        width: 90%;
+        border-radius: 100px;
+    }
 }
 
 .card{
@@ -45,25 +67,55 @@ $card-margin-l: 10px;
     &_content{
         font-size: 14px;
         line-height: 19px;
-        margin-left: $card-margin-l;
         opacity: 0.8;
         //clear: both;
-        padding-left: 17px;
-        padding-top:5px;
-        padding-bottom: 29px;
+        
+        min-height: 30px;
+
+        padding: 10px ; 
 
     }
-
-    &_detail {
-        cursor: pointer;
-        padding: 0 0 20px 20px;
-
+    
+    &_icon{
+        position: relative;
+        padding: 0 0 10px 20px;
         img{
+            cursor: pointer;
             width: $avatar-size;
             height: $avatar-size;
             border-radius: 100%;
             vertical-align: middle;
+            display: inline-block;
+            vertical-align: middle;
         }
+
+        .card_user_info{
+            display: inline-block;
+    
+            p{
+                height: 10px;
+                margin-bottom: 3px;
+                font-weight: normal;
+                font-size: 10px;
+            }
+        }
+        
+    }
+
+    &_detail{
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 0;
+
+        img{
+            width: 30px;
+            height: 30px;
+            width: 100%;
+            border-radius: 100%;
+            vertical-align: middle;
+        }
+        
         
       }
 }

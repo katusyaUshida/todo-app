@@ -2,19 +2,23 @@
   %ul
     - task.errors.full_messages.each do |message|
       %li= message
-  .new-card
-    New Card
-  = form_with(model: task, local: true) do |f|
+
+  = form_with(model: [@board, task], local: true) do |f|
     %div
-      = f.label :title, 'Name',class: 'name'
+      = f.label :eyecatch, 'Image'
+    %div
+      = f.file_field :eyecatch
+    %div
+      = f.label :name, 'Name'
     %div
       = f.text_field :title, class: 'text'
     %div
-      = f.label :deadline, 'Deadline'
-    %div
-      = f.date_field :deadline, class: 'text'
-    %div
-      = f.label :content, 'Description', class: 'description'
+      = f.label :content, 'Description'
     %div
       = f.text_area :content
+    %div
+      = f.label :deadline, 'Dedline'
+    %div
+      = f.date_field :deadline
+
     = f.submit 'Submit', class: 'btn-primary'
