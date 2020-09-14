@@ -1,1 +1,24 @@
-= render 'form', task: @task
+.container
+  %ul
+    - @task.errors.full_messages.each do |message|
+      %li= message
+
+  = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
+    %div
+      = f.label :eyecatch, 'Image'
+    %div
+      = f.file_field :eyecatch
+    %div
+      = f.label :name, 'Name'
+    %div
+      = f.text_field :title, class: 'text'
+    %div
+      = f.label :content, 'Description'
+    %div
+      = f.text_area :content
+    %div
+      = f.label :deadline, 'Dedline'
+    %div
+      = f.date_field :deadline
+
+    = f.submit 'Submit', class: 'btn-primary'

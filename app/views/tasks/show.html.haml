@@ -1,24 +1,25 @@
-.board
-  .board_mark
-    = image_tag 'IMG_7500.jpg'
-  .board_title
-    = @task.title
-  .board_detail
-    = image_tag 'Oval.png'
-    %div
-      %p username
-      = @task.updated_at
-      - if user_signed_in?
-        .board_detail_actions
-          .dropdown
-            = image_tag 'Combined Shape.png', class: 'dropbtn'
-            .dropdown-content.mini
-              = link_to 'edit', edit_task_path(@task)
-              = link_to 'delete', task_path(@task), data:{method: 'delete', confirm: 'Are you sure you want to delete it?'}
-  .board_content
-    = @task.content
+.boards_list
+  .board_title-content
+    %h2.task_title= @task.title
+    - if user_signed_in? && current_user.has_written?(@board)
+      .dropdown
+        = image_tag 'Combined Shape'
+        .dropdown-content
+          = link_to 'edit', edit_board_task_path(board_id: @board.id, id: @task.id)
+          = link_to 'delete', board_task_path(board_id: @board.id, id: @task.id), data: { method: 'delete', confirm: '本当に削除しても大丈夫ですか？' }
+  - if @task.eyecatch.attached?
+    .task_eyecatch
+      = image_tag @task.eyecatch
+  .card
+    .card_content
+      = @task.content
+    .card_content
+      = @task.deadline
 
-.board
-  %h2 Talk
-  .board_talks
-    %p comment
+-# %h1 Comment
+-# - @comments.each do |comment|
+-#   %div
+-#     = comment.content
+
+-# .container
+-#   = link_to 'Add new comment', new_task_comment_path(@task)

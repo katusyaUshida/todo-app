@@ -1,11 +1,13 @@
 class BoardsController < ApplicationController
+  before_action :set_board, only: [:show]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @boards = Board.all
   end
 
   def show
-    @board = Board.find(params[:id])
+    @tasks = @board.tasks
   end
 
   def new
@@ -22,10 +24,15 @@ class BoardsController < ApplicationController
     end
   end
 
+  def edit
+    @board = current_user.boards.find(params[:id])
+  end
+
   def update
-    @board = Board.find(params[:id])
+    # @board = current_user.boards.build(board_params)
+    @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
-      redirect_to boards_path, notice: 'Board is update'
+      redirect_to board_path(@board), notice: 'Board is update'
     else
       flash.now[:error] = 'update failure'
       render :edit
@@ -33,7 +40,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    board = Board.find(params[:id])
+    board = current_user.boards.find(params[:id])
     board.destroy!
     redirect_to root_path, notice: 'succes delete'
   end
@@ -41,5 +48,9 @@ class BoardsController < ApplicationController
   private
   def board_params
     params.require(:board).permit(:title, :content)
+  end
+
+  def set_board
+    @board = Board.find(params[:id])
   end
 end

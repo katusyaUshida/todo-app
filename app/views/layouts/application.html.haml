@@ -10,17 +10,16 @@
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
   %body
     %header.header
-      .header_logos
-        %p.header_title 
-          = link_to 'Boards', root_path
+      .header_title
+        = link_to 'Boards', root_path
       - if user_signed_in?
         .dropdown
-          = image_tag 'IMG_7500.jpg',class: 'header_avatar'
+          = image_tag 'default-avatar.png', class: 'header_avatar dropbtn'
           .dropdown-content
-            %a{:href => "#"} プロフィール
-            = link_to 'log out', destroy_user_session_path, data: {method: 'delete'}
-      -else 
-        = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
+            = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+      -else
+        = link_to 'ログイン', new_user_password_path,class: 'header_loginBtn'
+        .line
     - if flash.present?
       .flash
         - flash.each do |key, value|
