@@ -5,6 +5,7 @@
 @import 'flash';
 @import 'common';
 @import 'header';
+@import 'comment';
 
 
 
@@ -188,14 +189,13 @@ a{
 
 .float_btn {
   position: relative;
- // width: 355px;
  height: 160px;
  background: #FFFFFF;
  border: 1px dashed rgba(0, 0, 0, 0.2);
  border-radius: 10px;
  cursor: pointer;
  width: 87%;
- margin:0 auto;
+ margin:10px auto;
  vertical-align: middle;
  
 
@@ -211,7 +211,10 @@ a{
      color: #000000;
      border-bottom: 0;
      width:  100%;
-     
-     
+
    }
+}
+
+.mini{
+  height: 120px;
 }
