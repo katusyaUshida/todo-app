@@ -5,6 +5,7 @@ $header-padding-y: 10px;
 $avatar-size: 30px; 
 
 .header{
+    position: relative;
     font-family: $text-base-font-family;
     display: flex;
     justify-content: space-between;
@@ -34,7 +35,11 @@ $avatar-size: 30px;
     }
 
     &_loginBtn{
+        position: absolute;
+        right: 16px;
         height: $avatar-size;
+        min-width: 40px;
+        text-align: center;
         background-color: $color-base;
         border-radius: 5px;
         font-size: 12px;

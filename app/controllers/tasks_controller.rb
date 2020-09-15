@@ -39,7 +39,6 @@ class TasksController < ApplicationController
     @board = Board.find(params[:board_id])
     @task = @board.tasks.find(params[:id])
     if @task.update(task_params)
-      #binding.pry
       redirect_to board_task_path(@board, @task), notice: 'Task is update'
     else
       flash.now[:error] = 'update failure'
@@ -51,7 +50,7 @@ class TasksController < ApplicationController
     board = Board.find(params[:board_id])
     task = board.tasks.find(params[:id])
     task.destroy!
-    redirect_to root_path, notice: 'succes delete'
+    redirect_to board_path(board), notice: 'succes delete'
   end
 
   private
