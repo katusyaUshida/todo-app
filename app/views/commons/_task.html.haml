@@ -9,3 +9,12 @@
       = task.content
     .card_content
       = task.deadline
+    .card_info
+      .card_icon
+        = image_tag 'Oval.png'
+      - if user_signed_in? && current_user.has_written?(@board)
+        .dropdown
+          = image_tag 'Combined Shape'
+          .dropdown-content
+            = link_to 'edit', edit_board_task_path(board_id: @board.id, id: task.id)
+            = link_to 'delete', board_task_path(board_id: @board.id, id: task.id), data: { method: 'delete', confirm: '本当に削除しても大丈夫ですか？' }

@@ -36,12 +36,13 @@ $card-margin-l: 10px;
     margin: 16px 20px;
     border-radius: 10px;
     cursor: pointer;
+    word-wrap: break-word;
 
     &_title{
         font-weight: bold;
         font-size: 18px;
         line-height: 25px;
-        padding: 32px 0 10px 17px;
+        padding: 32px 0 10px 10px;
         color: black;
         //float: left;
 
@@ -68,30 +69,40 @@ $card-margin-l: 10px;
         font-size: 14px;
         line-height: 19px;
         opacity: 0.8;
-        //clear: both;
-        
         min-height: 30px;
-
-        padding: 10px ; 
+        padding: 10px;
+        padding-left: 10px;  
 
     }
     
-    &_icon{
-        position: relative;
-        padding: 0 0 10px 20px;
-        img{
-            cursor: pointer;
-            width: $avatar-size;
-            height: $avatar-size;
-            border-radius: 100%;
-            vertical-align: middle;
-            display: inline-block;
-            vertical-align: middle;
+    
+
+    .card_info{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        padding-bottom: 10px;
+        vertical-align: middle;
+
+        .card_icon{
+            display: flex;
+            justify-content: space-between;
+             
+            img{
+                cursor: pointer;
+                width: $avatar-size;
+                height: $avatar-size;
+                border-radius: 100%;
+                vertical-align: middle;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 5px;
+            }
         }
 
         .card_user_info{
-            display: inline-block;
-    
+            
+
             p{
                 height: 10px;
                 margin-bottom: 3px;
@@ -99,7 +110,6 @@ $card-margin-l: 10px;
                 font-size: 10px;
             }
         }
-        
     }
 
     &_detail{

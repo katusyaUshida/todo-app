@@ -2,15 +2,15 @@
   .card
     .card_title= board.title
     .card_content= board.content
-    .card_icon
-      = image_tag 'Oval.png'
-      .card_user_info
-        %p= board.author_name 
-        %p= board.display_created_at
-      .card_detail
-        - if user_signed_in? && current_user.has_written?(board)
-          .dropdown
-            = image_tag 'Combined Shape'
-            .dropdown-content
-              = link_to 'edit', edit_board_path(board)
-              = link_to 'delete', board_path(board), data: { method: 'delete', confirm: '本当に削除しても大丈夫ですか？' }
+    .card_info
+      .card_icon
+        = image_tag 'Oval.png'
+        .card_user_info
+          %p= board.author_name 
+          %p= board.display_created_at
+      - if user_signed_in? && current_user.has_written?(board)
+        .dropdown
+          = image_tag 'Combined Shape'
+          .dropdown-content
+            = link_to 'edit', edit_board_path(board)
+            = link_to 'delete', board_path(board), data: { method: 'delete', confirm: '本当に削除しても大丈夫ですか？' }
