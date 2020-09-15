@@ -16,10 +16,15 @@
     .card_content
       = @task.deadline
 
-%h2 Comment
--# - @comments.each do |comment|
--#   %div
--#     = comment.content
+.comment
+  %h2 Comment
+  .comment_card
+    - @comments.each do |comment|
+      .comment_card_content
+        = image_tag 'Oval.png'
+        %p= comment.content
 
--# .container
--#   = link_to 'Add new comment', new_task_comment_path(@task)
+= link_to new_task_comment_path(@task) do
+  .float_btn.mini
+    .float_btn_title
+      + Add new comment     
